@@ -17,11 +17,31 @@ var resetButton = document.querySelector("#reset");
 var easyBtn = document.querySelector("#easyBtn");
 var hardBtn = document.querySelector("#hardBtn");
 
+//Add Easy mode button
 easyBtn.addEventListener("click", function(){
     hardBtn.classList.remove("selected");
     easyBtn.classList.add("selected");
-})
 
+    //Add colors to generate three random colors
+    colors = generateRandomColors(3);
+    //Pick new colors
+    pickedColor = pickColor();
+    //changing the background at the top to show the new color
+    colorDisplay.textContent = pickedColor;
+
+    //Changing the random colors at the first top three on Easy mode
+    for(var i = 0; i < squares.length; i++){
+        if(colors[i]){
+            squares[i].style.background = colors[i];
+        } 
+        //Hide 3 colors when click on Easy mode
+        else {
+            squares[i].style.background = "none";
+        }
+    }
+});
+
+//Add Hard mode button
 hardBtn.addEventListener("click", function(){
     hardBtn.classList.add("selected");
     easyBtn.classList.remove("selected");
