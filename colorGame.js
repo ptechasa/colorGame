@@ -13,6 +13,15 @@ var pickedColor = pickColor();
 var colorDisplay = document.getElementById("colorDisplay");
 var messageDisplay = document.querySelector("#message");
 var h1 = document.querySelector("h1");
+var resetButton = document.querySelector("#reset");
+
+resetButton.addEventListener('click', function () {
+    //Generate all new colors
+
+    //Pick a new random color from array
+
+    //Change colors of squares
+})
 
 colorDisplay.textContent = pickedColor;
 
@@ -73,3 +82,4 @@ function randomColor() {
     // rgb(red, green, blue)
     return "rgb(" + red + ", " + green + ", " + blue + ")";
 }
+

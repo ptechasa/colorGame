@@ -18,6 +18,9 @@ h1 {
     color: whitesmoke;
 }
 
-span {
-    color: white;
+#stripe {
+    background: white;
+    height: 50px;
+    text-align: center;
+    color: black;
 }
