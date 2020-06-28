@@ -4,8 +4,8 @@
 
 
 ## Game Rules
-1. The RGB colors gmae will be generated a new random color at the top, and then the players have to guess in 6 colors squares. What is the color that you see
+1. The RGB colors game will be generated a random color number at the top, and then the players have to guess in 6 colors squares. Can you guess from the RGB(xxx, xxx, xxx) number that you see what color would it be?
 
-- For example, RGB(255, 255, 0), it is yellow color. If you pick the correct color, it will change the right color at the top, plus all six squares box also. 
+- For example, RGB(255, 255, 0), it is yellow color. If you pick the correct color, it will change the right color at the top (backgrounp), plus all six squares box also. 
 
 2. You can choose how hard do you want to play; easy or hard
