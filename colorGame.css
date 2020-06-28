@@ -24,3 +24,8 @@ h1 {
     text-align: center;
     color: black;
 }
+
+#reset {
+    margin: 10px;
+    padding: 5px;
+}
