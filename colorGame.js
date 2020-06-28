@@ -17,10 +17,15 @@ var resetButton = document.querySelector("#reset");
 
 resetButton.addEventListener('click', function () {
     //Generate all new colors
-
+    colors = generateRandomColors(6);
     //Pick a new random color from array
-
+    pickedColor = pickColor();
+    //Change colorDisplay to match pickedColor
+    colorDisplay.textContent = pickedColor;
     //Change colors of squares
+    for (var i = 0; i < squares.length; i++) {
+        squares[i].style.background = color[i];
+    }
 })
 
 colorDisplay.textContent = pickedColor;
