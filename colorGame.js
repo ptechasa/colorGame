@@ -7,7 +7,8 @@
 //     "rgb(255, 0, 255)"  //Magenta
 // ]
 
-var colors = generateRandomColors(6);
+var numSquares = 6;
+var colors = generateRandomColors(numSquares);
 var squares = document.querySelectorAll(".square");
 var pickedColor = pickColor();
 var colorDisplay = document.getElementById("colorDisplay");
@@ -22,8 +23,10 @@ easyBtn.addEventListener("click", function () {
     hardBtn.classList.remove("selected");
     easyBtn.classList.add("selected");
 
+    //Display only three squares
+    numSquares = 3;
     //Add colors to generate three random colors
-    colors = generateRandomColors(3);
+    colors = generateRandomColors(numSquares);
     //Pick new colors
     pickedColor = pickColor();
     //changing the background at the top to show the new color
@@ -36,7 +39,7 @@ easyBtn.addEventListener("click", function () {
         }
         //Hide 3 colors when click on Easy mode
         else {
-            squares[i].style.background = "none";
+            squares[i].style.display = "none";
         }
     }
 });
@@ -46,8 +49,10 @@ hardBtn.addEventListener("click", function () {
     hardBtn.classList.add("selected");
     easyBtn.classList.remove("selected");
 
+    //Display all six squares
+    numSquares = 6;
     //Add colors to generate six random colors
-    colors = generateRandomColors(6);
+    colors = generateRandomColors(numSquares);
     //Pick new colors
     pickedColor = pickColor();
     //changing the background at the top to show the new color
@@ -58,13 +63,13 @@ hardBtn.addEventListener("click", function () {
         //Assign the new color to all squares 
         squares[i].style.background = colors[i];
         //All squares are unhidden
-        squares[i].style.background = "block";
+        squares[i].style.display = "block";
     }
 });
 
 resetButton.addEventListener("click", function () {
     //Generate all new colors
-    colors = generateRandomColors(6);
+    colors = generateRandomColors(numSquares);
     //Pick a new random color from array
     pickedColor = pickColor();
     //Change colorDisplay to match pickedColor
