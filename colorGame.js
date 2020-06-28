@@ -18,7 +18,7 @@ var easyBtn = document.querySelector("#easyBtn");
 var hardBtn = document.querySelector("#hardBtn");
 
 //Add Easy mode button
-easyBtn.addEventListener("click", function(){
+easyBtn.addEventListener("click", function () {
     hardBtn.classList.remove("selected");
     easyBtn.classList.add("selected");
 
@@ -30,10 +30,10 @@ easyBtn.addEventListener("click", function(){
     colorDisplay.textContent = pickedColor;
 
     //Changing the random colors at the first top three on Easy mode
-    for(var i = 0; i < squares.length; i++){
-        if(colors[i]){
+    for (var i = 0; i < squares.length; i++) {
+        if (colors[i]) {
             squares[i].style.background = colors[i];
-        } 
+        }
         //Hide 3 colors when click on Easy mode
         else {
             squares[i].style.background = "none";
@@ -42,10 +42,25 @@ easyBtn.addEventListener("click", function(){
 });
 
 //Add Hard mode button
-hardBtn.addEventListener("click", function(){
+hardBtn.addEventListener("click", function () {
     hardBtn.classList.add("selected");
     easyBtn.classList.remove("selected");
-})
+
+    //Add colors to generate six random colors
+    colors = generateRandomColors(6);
+    //Pick new colors
+    pickedColor = pickColor();
+    //changing the background at the top to show the new color
+    colorDisplay.textContent = pickedColor;
+
+    //Changing all the six random colors on Hard mode
+    for (var i = 0; i < squares.length; i++) {
+        //Assign the new color to all squares 
+        squares[i].style.background = colors[i];
+        //All squares are unhidden
+        squares[i].style.background = "block";
+    }
+});
 
 resetButton.addEventListener("click", function () {
     //Generate all new colors
