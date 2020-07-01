@@ -7,8 +7,8 @@
 //     "rgb(255, 0, 255)"  //Magenta
 // ]
 
-var numSquares = 6;
 var colors = [];
+var numSquares = 6;
 var pickedColor;
 var squares = document.querySelectorAll(".square");
 var colorDisplay = document.getElementById("colorDisplay");
@@ -23,17 +23,16 @@ var modeButtons = document.querySelectorAll(".mode");
 init();
 
 function init() {
-    //mode buttond event listeners
     setupModeButtons();
     setupSquares()
-
     //Run the reset
     reset();
 }
 
 function setupModeButtons() {
-    for (var i = 0; i < modeButtons.lenght; i++) {
+    for (var i = 0; i < modeButtons.length; i++) {
         modeButtons[i].addEventListener("click", function () {
+            modeButtons[0].classList.remove("selected");
             modeButtons[1].classList.remove("selected");
             this.classList.add("selected");
             // if (this.textContent === "esay") {
@@ -151,7 +150,6 @@ function reset() {
 
 resetButton.addEventListener("click", function () {
     reset();
-
 })
 
 function changeColors(color) {
