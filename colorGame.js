@@ -19,10 +19,19 @@ var resetButton = document.querySelector("#reset");
 // var hardBtn = document.querySelector("#hardBtn");
 var modeButtons = document.querySelectorAll(".mode");
 
-//Run the init function first
+//Call and Run the init function first
 init();
 
 function init() {
+    //mode buttond event listeners
+    setupModeButtons();
+    setupSquares()
+
+    //Run the reset
+    reset();
+}
+
+function setupModeButtons() {
     for (var i = 0; i < modeButtons.lenght; i++) {
         modeButtons[i].addEventListener("click", function () {
             modeButtons[1].classList.remove("selected");
@@ -32,10 +41,14 @@ function init() {
             // } else {
             //     numSquares = 6;
             // }
-            this.textContent === "easy" ? numSquares = 3 : numSquares = 6;
+            this.textContent === "Easy" ? numSquares = 3 : numSquares = 6;
             reset();
-        })
+        });
     }
+}
+
+function setupSquares() {
+    //Set up the squares Listener
     for (var i = 0; i < squares.length; i++) {
         // //Add initial colors to square
         // squares[i].style.background = colors[i];
@@ -59,7 +72,6 @@ function init() {
             }
         });
     }
-    reset();
 }
 
 function reset() {
@@ -141,10 +153,6 @@ resetButton.addEventListener("click", function () {
     reset();
 
 })
-
-colorDisplay.textContent = pickedColor;
-
-
 
 function changeColors(color) {
     //Loop through all squares
