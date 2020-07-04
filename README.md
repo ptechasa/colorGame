@@ -2,7 +2,7 @@
 
 **RGB(red, green, blue)** is added three colors together in various ways to reproduce a broad array of colors. Each color is represented by three numbers, each ranging from 0 to 255. This game  will play with the main colors: Red, Green, and Blue. 
 
-![][RGB Color Game](Screen.png)
+![RGB Color Game](Screen.png)
 
 
 ## Game Rules
